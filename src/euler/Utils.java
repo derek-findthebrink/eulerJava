@@ -228,4 +228,72 @@ public class Utils {
 	//		System.out.println(tag + num + " does not have multiple " + multiple);
 			return false;
 		}
+
+	public static long getDifferenceSumOfSquaresAndSquareOfSum(long init, long upper){
+		String tag = "getDifferenceSumOfSquaresAndSquareOfSum: ";
+		
+	
+		long sum = getSumOfNumbersInRange(init, upper);
+		long squareOfSum = sum * sum;
+		
+		long sumOfSquares = getSumOfSquaresInRange(init, upper);
+		
+		long diff = squareOfSum - sumOfSquares;
+		
+		System.out.println(tag + diff + " | " + squareOfSum + " - " + sumOfSquares);
+		return diff;
+	}
+
+	public static long getSumOfNumbersInRange(long init, long upper){
+			String tag = "getSumOfNumbersInRange: ";
+			
+			long sum = 0;
+			int count = (int)init;
+			
+			while (count <= upper){
+				sum += count;
+				count++;
+			}
+	//		System.out.println(tag + sum);
+			return sum;
+		}
+
+	public static long getSumOfSquaresInRange(long init, long upper){
+			String tag = "getSumOfSquares: ";
+			// squares each number, starting from one up to upper, and adds each sum to final
+			long sum = 0;
+			int count = (int)init;
+			
+			while (count <= upper){
+				long square = (long)count * (long)count;
+				sum += square;
+	//			System.out.println(tag + count + " squared: " + square);
+				count++;
+			}
+	//		System.out.println(tag + "Sum is: " + sum);
+			return sum;
+		}
+
+	public static long findNthPrime(long nth){
+		String tag = "findNthPrime: ";
+		
+		long nthPrime = 0;
+		int count = 2;
+		long marker = 2;
+		long testLimit = 1000000 * 3;
+		
+		while (count <= nth && marker < testLimit){
+			if (isPrime(marker)){
+				nthPrime = marker;
+				count++;
+			}
+			marker++;
+		}
+		if (marker >= testLimit){
+			System.out.println(tag + "test stopped at: " + marker + ". Please increase testLimit to continue!");
+			return 0;
+		}
+		System.out.println(tag + "base 1 Prime[" + (count - 1) + "] is " + nthPrime);
+		return nthPrime;
+	}
 }
