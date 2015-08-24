@@ -53,13 +53,8 @@ public class Eu4 {
 	public static int findLargestPalindrome(int x, int y){
 		String tag = "findLargestPalindrome: ";
 		// takes the hightest possible number, finds highest palindromes, checks for multiples that are above lower limit
-		int highBound = x * x;
-		int lowBound = y * y;
 		int palCount = 0;
 		int lastPal = 0;
-		
-		int testLimit = (899 * 300) + 3;
-		int count = 0;
 		
 		int interFirst = x;
 		int interSecond = x;
@@ -77,7 +72,6 @@ public class Eu4 {
 				System.out.println(tag + "Palendrome found: " + product + " | " + palCount + " | " + interFirst + " * " + interSecond);
 			}
 			interSecond--;
-			count++;
 		}
 		
 		
