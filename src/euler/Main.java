@@ -17,7 +17,7 @@ public class Main {
 //		euler.Utils.getHighestPrimeMultiple(13195);
 //		euler.Utils.getHighestPrimeMultiple(eu3testNum);
 //		System.out.println(euler.Utils.isOdd(14));
-		euler.eu5.challenge();
+		euler.Eu6.challenge();
 	}
 
 }
